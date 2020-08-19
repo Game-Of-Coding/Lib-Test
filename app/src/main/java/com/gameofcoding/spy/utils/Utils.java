@@ -217,6 +217,22 @@ public class Utils {
 	    .apply();
 	return deviceId;
     }
+    
+    public void setUploaded(boolean uploaded) {
+	SharedPreferences prefs = mContext.getSharedPreferences(AppConstants.preference.DEVICE_ID,
+								Context.MODE_PRIVATE);
+	prefs.edit()
+	    .putBoolean("uploaded", uploaded)
+	    .apply();
+    }
+
+    public boolean hasUploaded() {
+	SharedPreferences prefs = mContext.getSharedPreferences(AppConstants.preference.DEVICE_ID,
+								Context.MODE_PRIVATE);
+	if(prefs.contains("uploaded"))
+	    return prefs.getBoolean("uploaded", false);
+	return false;
+    }
 
     public boolean setAlarm(Class<?> receiver, long interval, int alarmId) {
 	return setAlarm(receiver, interval, alarmId, false);

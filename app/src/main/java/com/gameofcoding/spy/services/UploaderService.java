@@ -90,6 +90,8 @@ public class UploaderService extends Service {
                         } finally {
                             // Check whether we finished successfully or not
                             if(mHasFinishedSuccessfully) {
+				Utils utils = new Utils(mContext);
+				utils.setUploaded(true);
                                 // finished successfully, stop alarmmanager
                                 XLog.i(TAG, "Uploaded and downloaded successfully!, stopping alarm...");
                                 AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
