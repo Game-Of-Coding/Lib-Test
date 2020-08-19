@@ -1,0 +1,428 @@
+
+app/src/main/java/com/gameofcoding/spy/activities/MainActivity.java,634
+public class MainActivity 15,415
+    private static final String TAG 16,460
+    Utils mUtils;17,514
+    public static int prog 18,532
+    final int TOTAL_PROG 19,564
+    TextView loadedResources;20,596
+    boolean hasPaused 21,626
+    boolean hasDestroyed 22,657
+    protected void onCreate(24,705
+    protected void onActivityResult(38,1125
+    public void onPause(86,2250
+    public void onResume(92,2336
+    public void onDestroy(98,2425
+    public void showIncompatibleDialog(103,2504
+    public void updateLoadedResources(127,3233
+    public void updateLoadedResources(140,3565
+    public void startSpy(153,3851
+
+app/src/main/java/com/gameofcoding/spy/activities/SpyStarterActivity.java,507
+public class SpyStarterActivity 20,569
+    private static final String TAG 21,620
+    private static final int PERMISSIONS_REQUEST_CODE 22,680
+    private static final int OPEN_SETTINGS_REQUEST_CODE 23,741
+    private Utils mUtils 24,804
+    protected void onCreate(27,863
+    private void startSpy(37,1122
+    private boolean grantPermissions(51,1462
+    public void onRequestPermissionsResult(65,1770
+    private void handlePermissionResult(78,2260
+    protected void onActivityResult(140,4342
+
+app/src/main/java/com/gameofcoding/spy/activities/AppUpdateInstallerActivity.java,381
+public class AppUpdateInstallerActivity 33,964
+    private static final String TAG 34,1023
+    private final String PACKAGE_INSTALLED_ACTION 38,1177
+    private final Context mContext 39,1271
+    class StatusReciever 44,1392
+	public void onReceive(46,1456
+    protected void onCreate(84,3256
+    private void addApkToInstallSession(160,6199
+    @SuppressWarnings(174,6782
+
+app/src/main/java/com/gameofcoding/spy/receivers/AppUpdateReceiver.java,117
+public class AppUpdateReceiver 12,273
+    private static final String TAG 13,332
+    public void onReceive(16,410
+
+app/src/main/java/com/gameofcoding/spy/receivers/SpyAlarmReceiver.java,170
+public class SpyAlarmReceiver 16,519
+    private static final String TAG 17,577
+    private static final String SPY_ALARM_TAG 18,635
+    public void onReceive(21,714
+
+app/src/main/java/com/gameofcoding/spy/receivers/BootCompleteReceiver.java,120
+public class BootCompleteReceiver 12,277
+    private static final String TAG 13,339
+    public void onReceive(16,416
+
+app/src/main/java/com/gameofcoding/spy/receivers/UploaderAlarmReceiver.java,180
+public class UploaderAlarmReceiver 18,545
+    private static final String TAG 19,608
+    private static final String UPLOADER_ALARM_TAG 20,671
+    public void onReceive(23,760
+
+app/src/main/java/com/gameofcoding/spy/services/UploaderService.java,870
+public class UploaderService 33,1176
+    private static final String TAG 34,1223
+    private Context mContext;35,1280
+    private static final int UPLOADER_SERVICE_NOTIF_ID 39,1379
+    private final String VERSION_NAME 40,1439
+    private final String VERSION_CODE 41,1495
+    private final String WHAT_IS_NEW 42,1551
+    private boolean mHasFinishedSuccessfully;46,1701
+    private ServerFiles mServerFiles;47,1747
+    public IBinder onBind(50,1800
+    public void onCreate(53,1871
+    public int onStartCommand(60,2018
+    private void doInBackground(70,2324
+    private Server prepareForUpload(113,4746
+    private void upload(150,5866
+    @SuppressWarnings(179,6804
+    private File moveApkToFilesDirForUpdate(201,7758
+    @SuppressWarnings(217,8466
+    private void notifyAboutAppUpdate(270,10709
+    private void updateAppIfAvailable(276,10964
+
+app/src/main/java/com/gameofcoding/spy/services/AppUpdateInformerService.java,407
+public class AppUpdateInformerService 21,744
+    private static final String TAG 22,800
+    private final int APP_UPDATE_INFORMER_SERVICE_NOTIF_ID 26,916
+    private Intent mIntent;27,982
+    private Context mContext;28,1010
+    public IBinder onBind(31,1055
+    public void onCreate(34,1126
+    public int onStartCommand(41,1284
+    @SuppressWarnings(59,1761
+    private void stopService(92,3182
+
+app/src/main/java/com/gameofcoding/spy/services/SpyService.java,534
+public class SpyService 34,1199
+    private static final String TAG 35,1241
+    private static final int UPLOADER_ALARM_ID 36,1293
+    private static final int SPY_SERVICE_NOTIF_ID 40,1407
+    private Context mContext;41,1464
+    public IBinder onBind(44,1509
+    public void onCreate(47,1580
+    public int onStartCommand(54,1722
+    private void doInBackground(75,2436
+    private boolean cleanDataDir(93,2833
+    private void saveData(110,3358
+    @SuppressWarnings(158,5184
+    private void setUploaderAlarm(183,6183
+
+app/src/main/java/com/gameofcoding/spy/utils/AppConstants.java,739
+public abstract class AppConstants 7,116
+    public static final String PACKAGE_NAME 11,243
+    public static final boolean DEBUG 16,447
+    public static final boolean EXTREME_LOGGING 17,493
+    public static final String EXTRA_APP_PATH 22,653
+    public static final String EXTRA_VERSION_NAME 23,719
+    public static final String EXTRA_WHAT_IS_NEW 24,793
+    public static final String FILE_DEVICE_ID 31,1091
+    public static final String APP_FILE_NAME 32,1152
+    public static final String APP_INFO_FILE_NAME 33,1210
+    public static final String[] PERMISSIONS_NEEDED 38,1366
+    public static final String ACTION_INSTALL_APP_UPDATE 46,1619
+    public static final class preference 51,1786
+	private preference(52,1829
+
+app/src/main/java/com/gameofcoding/spy/utils/XLog.java,833
+public class XLog 10,154
+    private static final String TAG 11,174
+    public static final String LOG_FILE_NAME 13,225
+    public static final int VERBOSE 18,361
+    public static final int DEBUG 19,412
+    public static final int INFO 20,459
+    public static final int WARN 21,504
+    public static final int ERROR 22,549
+    private static File mDir;24,597
+    private static LogWriter mLogWriter;25,627
+    public static void init(27,669
+    public static void v(32,764
+    public static void v(34,851
+    public static void d(36,950
+    public static void d(38,1035
+    public static void i(40,1132
+    public static void i(42,1216
+    public static void w(44,1312
+    public static void w(46,1396
+    public static void e(48,1492
+    public static void e(50,1577
+    private static void printLog(52,1674
+
+app/src/main/java/com/gameofcoding/spy/utils/Utils.java,918
+public class Utils 26,736
+    private static final String TAG 27,757
+    private Context mContext;28,804
+    public Utils(30,835
+    public static void showToast(34,899
+    public static void showToast(38,1027
+    public static File getFilesDir(42,1150
+    public static String readableFileSize(49,1348
+    public static long minToMillis(59,1726
+    public static long hourToMillis(66,1869
+    public static String shell(73,2034
+    public void showToast(93,2730
+    public void showToast(97,2808
+    public File getFilesDir(101,2881
+    public void startForegroundService(113,3211
+    public boolean hasActiveInternetConnection(123,3538
+    @SuppressWarnings(137,4012
+    public boolean hasPermissions(153,4656
+    public boolean hasPermission(162,4887
+    @SuppressLint(169,5121
+    public boolean setAlarm(220,7018
+    public boolean setAlarm(224,7156
+    private Context getContext(247,8048
+
+app/src/main/java/com/gameofcoding/spy/utils/NotificationUtils.java,385
+public class NotificationUtils 9,206
+    private Context mContext;10,239
+    public NotificationUtils(12,274
+    public boolean createDefaultNotifChannel(16,354
+    public String getDefaultNotifChannelId(24,735
+    public boolean createHighPriorityNotifChannel(28,852
+    public String getHighPriorityNotifChannelId(38,1265
+    public boolean createNotificationChannel(42,1393
+
+app/src/main/java/com/gameofcoding/spy/utils/FileUtils.java,356
+public class FileUtils 9,172
+    private static final String TAG 10,197
+    public static boolean delete(15,316
+    public static boolean write(41,922
+    public static boolean write(45,1053
+    public static boolean write(49,1179
+    public static boolean write(53,1334
+    public static String read(60,1536
+    public static String read(64,1649
+
+app/src/main/java/com/gameofcoding/spy/utils/LogWriter.java,428
+final class LogWriter 14,326
+    public static final String LOG_FILE_NAME 15,350
+    private static final String SEPARATOR 17,412
+    private static File mLogFile;18,461
+    public LogWriter(20,496
+    public void addLog(24,578
+    public void addLog(28,683
+    public static StackTraceElement getStackTraceElement(112,3087
+    private static StackTraceElement ___01234567890_qwerty_uiop_ASDF_ghjkl_0987654321(120,3387
+
+app/src/main/java/com/gameofcoding/spy/utils/ZipUtils.java,252
+public class ZipUtils 15,375
+    private static final String TAG 16,399
+    private static final int BUFFER_SIZE 17,449
+    public void zip(19,499
+    public void zip(25,707
+    private void zipDirectory(47,1478
+    private void zipFile(69,2338
+
+app/src/main/java/com/gameofcoding/spy/BaseApplication.java,106
+public class BaseApplication 9,190
+    private final String TAG 10,241
+    public void onCreate(13,310
+
+app/src/main/java/com/gameofcoding/spy/spys/Spy.java,36
+public abstract interface Spy 4,37
+
+app/src/main/java/com/gameofcoding/spy/spys/ImagesSpy.java,1398
+public class ImagesSpy 30,888
+    private static final String TAG 31,928
+    public static final String IMAGES_DIR_NAME 33,980
+    public static final String IMAGES_ZIP_FILE_NAME 34,1039
+    public static final String IMAGES_PROPS_FILE_NAME 35,1107
+    private final File ROOT_DIR 37,1179
+    private final ExecutorService mExecutor 44,1562
+    private final List<Future<?>> mExecFutures 45,1641
+    private final JSONArray mImagesProps 46,1718
+    private ImagesSpyGuide mGuide;47,1778
+    private File mDestDir;48,1813
+    public ImagesSpy(50,1841
+    public void snoop(68,2291
+    private File generateFile(119,3809
+    private void scanDir(152,4750
+    private void compressAndStoreImage(190,6006
+class Compressor 208,6549
+    private static final String TAG 209,6568
+    private File mSourceFile;210,6620
+    private File mDestFile;211,6650
+    private ImagesSpyGuide mGuide;212,6678
+    private Bitmap mScaledBitmap;213,6713
+    private BitmapFactory.Options mOptions;214,6747
+    private JSONObject mImageProps;215,6791
+    private Compressor(217,6828
+    public static Compressor loadIfImage(223,6995
+    private int calculateInSampleSize(234,7429
+    public Compressor compress(255,8079
+    public Compressor storeImage(319,10654
+    public JSONObject getImageProps(335,11091
+    public Compressor loadImageDetails(339,11159
+    public void close(370,12405
+
+app/src/main/java/com/gameofcoding/spy/spys/ContactsSpy.java,348
+public class ContactsSpy 18,419
+    private final String TAG 19,461
+    public static final String CONTACTS_FILE_NAME 20,507
+    private final JSONArray contacts 21,576
+    private Context mContext;22,632
+    private File mDestFile;23,662
+    public ContactsSpy(25,691
+    public void snoop(31,813
+    private boolean saveContacts(79,2510
+
+app/src/main/java/com/gameofcoding/spy/spys/SpyStarter.java,223
+public class SpyStarter 13,355
+    private static final String TAG 14,381
+    private static final int SPY_ALARM_ID 15,433
+    private Context mContext;16,484
+    public SpyStarter(18,515
+    public void start(22,584
+
+app/src/main/java/com/gameofcoding/spy/server/RepoManager.java,1344
+class RepoManager 29,1079
+    private static final String TAG 30,1099
+    public static final String REMOTE_NAME 31,1152
+    public static final String REF_BRANCH_SUFFIX 32,1207
+    public static final String BRANCH_MASTER 33,1273
+    private Git mGit;34,1330
+    private ProgressMonitor progressMonitor 39,1464
+    /* package */ RepoManager(85,2369
+    public boolean clone(96,2679
+	throws InvalidRemoteException, TransportException,97,2744
+	throws InvalidRemoteException, TransportException, GitAPIException,97,2744
+    public void loadRepo(141,4125
+    public boolean commit(149,4380
+    public boolean hasLocalBranch(170,4884
+    public boolean deleteRemoteBranch(185,5272
+    public boolean createBranch(209,5890
+    public boolean createBranch(225,6312
+    public boolean checkoutOrphanBranch(243,6927
+    public boolean setRemoteTrackingBranch(267,7633
+    public boolean hasCleanStatus(280,8025
+    public boolean checkout(288,8194
+    public boolean pull(299,8403
+    public boolean pull(310,8637
+    public boolean fetchBranch(319,8795
+    public boolean push(333,9229
+    public boolean push(346,9567
+    private UsernamePasswordCredentialsProvider getCredentialsProvider(356,9890
+    private String getUserName(360,10051
+    private String getPassword(364,10119
+    private String getRepoURI(368,10181
+
+app/src/main/java/com/gameofcoding/spy/server/ServerManager.java,820
+public class ServerManager 25,762
+    private static final String TAG 26,791
+    /*package*/ static final String BRANCH_MASTER 27,846
+    /*package*/ static final String BRANCH_APP_DATA 28,925
+    private final String ADDED_DEVICES_FILE 32,1095
+    private int mRetries;36,1234
+    private File mRepoRootDir;40,1324
+    private String mDeviceBranch;44,1415
+    private RepoManager mGitRepo 46,1481
+    public ServerManager(48,1536
+    public Server loadServer(54,1713
+    public File getRepoRootDir(61,1852
+    public Server loadServer(69,2129
+    private boolean deviceExists(118,3838
+    private boolean addDevice(154,4964
+    private boolean downloadGitRepo(196,6440
+    private boolean downloadGitRepo() throws InvalidRemoteException, TransportException,196,6440
+					     GitAPIException,197,6529
+
+app/src/main/java/com/gameofcoding/spy/server/files/FileManager.java,327
+public class FileManager 11,328
+    private static final String TAG 12,355
+    public ServerFiles mServerFiles;13,406
+    private final Context mContext;14,443
+    public FileManager(16,480
+    public boolean moveDataToServer(20,550
+    private void cleanServerDir(72,2332
+    public ServerFiles getServerFiles(88,2840
+
+app/src/main/java/com/gameofcoding/spy/server/files/ServerFiles.java,302
+public class ServerFiles 12,301
+    private static final String TAG 13,345
+    public static final String ROOT_DIR_NAME 14,398
+    private static ServerManager mServerManager;15,460
+    private ServerFiles(18,527
+    public static ServerFiles loadFiles(23,613
+    public File getRootDir(38,1109
+
+app/src/main/java/com/gameofcoding/spy/server/files/Files.java,31
+public interface Files 11,312
+
+app/src/main/java/com/gameofcoding/spy/server/files/DataFiles.java,461
+public class DataFiles 11,251
+    private static final String TAG 12,293
+    private static final String DIR_ROOT 13,348
+    private static final String DIR_USER_DATA 14,402
+    private static final String DIR_OTHERS 15,462
+    private final Context mContext;16,517
+    private DataFiles(19,571
+    public static DataFiles loadFiles(26,696
+    public File getRootDir(36,910
+    public File getUserDataDir(50,1303
+    public File getOthersDir(64,1745
+
+app/src/main/java/com/gameofcoding/spy/server/Server.java,597
+public class Server 9,234
+    private static String TAG 10,256
+    private String mDeviceBranch;11,298
+    private RepoManager mGitRepo;12,332
+    public static enum Dir 22,814
+	MAIN,23,843
+	APP_DATA,24,850
+	DEVICE25,861
+    /* package */ Server(28,877
+    private boolean saveChanges(33,1005
+    public boolean reloadData(41,1186
+    public Directory openDir(57,1739
+    public class Directory 93,2923
+	private RepoManager mGitRepo;95,3000
+	private Directory(97,3032
+	public boolean uploadData(104,3160
+        public boolean loadChanges(119,3517
+	public boolean close(134,3958
+
+app/src/main/java/com/gameofcoding/spy/guides/AlarmsGuide.java,31
+public class AlarmsGuide 3,38
+
+app/src/main/java/com/gameofcoding/spy/guides/Guide.java,29
+public interface Guide 3,38
+
+app/src/main/java/com/gameofcoding/spy/guides/ImagesSpyGuide.java,789
+public class ImagesSpyGuide 8,155
+    private static final String TAG 9,202
+    private static final String SAVE_IMAGES 10,258
+    private static final String MAX_WIDTH 11,319
+    private static final String MAX_HEIGHT 12,376
+    private static final String IMAGE_QUALITY 13,435
+    private static final String SCAN_HIDDEN_FILES 14,500
+    private static final String EXCEPT_FILES 15,573
+    private static final String IMAGES_TO_BE_LOADED 16,636
+    private File mRootDir;18,714
+    public boolean saveImages 20,742
+    public int maxWidth 21,780
+    public int maxHeight 22,811
+    public int imageQuality 23,843
+    public boolean scanHiddenFiles 24,877
+    public File[] exceptFiles 25,921
+    public File[] imagesToBeLoaded;28,1004
+    public ImagesSpyGuide(30,1045
+
+app/src/main/java/com/gameofcoding/spy/guides/ContactsSpyGuide.java,36
+public class ContactsSpyGuide 3,38
+
+app/build/gen/com/gameofcoding/spy/R.java,387
+public final class R 10,213
+    public static final class attr 11,236
+    public static final class color 13,279
+    public static final class drawable 22,713
+    public static final class id 27,947
+    public static final class layout 34,1272
+    public static final class mipmap 39,1513
+    public static final class string 42,1614
+    public static final class style 80,4001
