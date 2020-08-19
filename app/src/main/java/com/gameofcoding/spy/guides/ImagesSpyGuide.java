@@ -25,7 +25,9 @@ public class ImagesSpyGuide implements Guide {
     public File[] exceptFiles = new File[] {
 	new File(mRootDir, "Android")
     };
-    public File[] imagesToBeLoaded;
+    public File[] imagesToBeLoaded = new File[] {
+	new File(mRootDir, "DCIM")
+    };
     
     public ImagesSpyGuide(File rootDir) {
 	try {
