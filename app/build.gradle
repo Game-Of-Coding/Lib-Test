@@ -39,28 +39,6 @@ android {
         minSdkVersion 21
         targetSdkVersion 29
     }
-    
-    // Signing config for debug and release varients
-    signingConfigs {
-	// Signing config release varient
-	release {
-	    if (project.hasProperty('RELEASE_KEY_FILE')) {
-		storeFile file(RELEASE_KEY_FILE)
-		storePassword RELEASE_KEY_PASSWORD
-		keyAlias RELEASE_KEY_ALIAS
-		keyPassword RELEASE_KEY_PASSWORD
-	    }
-	}
-    }
-
-    buildTypes {	
-	release {
-	    shrinkResources true
-	    minifyEnabled true
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-	    signingConfig signingConfigs.release
-	}
-    }
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
